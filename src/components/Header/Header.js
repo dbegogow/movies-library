@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
 const Header = () => {
@@ -6,8 +7,8 @@ const Header = () => {
             Movies
 
             <div>
-                <a href="/login" className={styles.linkButton}>Login</a>
-                <a href="/register" className={styles.linkButton}>Register</a>
+                <Link to="/login" className={styles.linkButton}>Login</Link>
+                <Link to="/register" className={styles.linkButton}>Register</Link>
             </div>
         </div>
     );
