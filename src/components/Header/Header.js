@@ -7,8 +7,8 @@ const Header = () => {
             Movies
 
             <div>
-                <Link to="/login" className={styles.linkButton}>Login</Link>
-                <Link to="/register" className={styles.linkButton}>Register</Link>
+                <Link to="/login" className={styles.linkButton}><span>Login</span></Link>
+                <Link to="/register" className={styles.linkButton}><span>Register</span></Link>
             </div>
         </div>
     );

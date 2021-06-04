@@ -18,9 +18,14 @@
     text-decoration: none;
     padding: 10px;
     position: relative;
+    cursor: default;
+}
+
+.linkButton span {
+  cursor: pointer;
 }
   
-.linkButton::after {
+.linkButton span::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -32,19 +37,19 @@
   transition: opacity 300ms, transform 300ms;
 }
 
-.linkButton:hover::after,
-.linkButton:focus::after {
+.linkButton span:hover::after,
+.linkButton span:focus::after {
   opacity: 1;
   transform: translate3d(0, 0.2em, 0);
 }
 
-.linkButton::after {
+.linkButton span::after {
   opacity: 1;
   transform: scale(0);
   transform-origin: center;
 }
 
-.linkButton:hover::after,
-.linkButton:focus::after{
+.linkButton span:hover::after,
+.linkButton span:focus::after{
   transform: scale(1);
 }
