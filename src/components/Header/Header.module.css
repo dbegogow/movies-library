@@ -1,0 +1,50 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: #383838;
+    color: #EBEBEB;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12px 36px;
+    z-index: 3;
+}
+
+.linkButton {
+    color: #9B9B9B;
+    text-decoration: none;
+    padding: 10px;
+    position: relative;
+}
+  
+.linkButton::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: #EBEBEB;
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.linkButton:hover::after,
+.linkButton:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}
+
+.linkButton::after {
+  opacity: 1;
+  transform: scale(0);
+  transform-origin: center;
+}
+
+.linkButton:hover::after,
+.linkButton:focus::after{
+  transform: scale(1);
+}
