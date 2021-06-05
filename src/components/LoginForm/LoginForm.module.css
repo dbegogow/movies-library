@@ -1,0 +1,23 @@
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 25vh;
+    margin: 0 auto;
+    max-width: 650px;
+}
+
+.button {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    color: #FFFFFF;
+    background: #5D6AF7;
+    font-size: 1.1rem;
+}
+
+.button:hover {
+    cursor: pointer;
+}
