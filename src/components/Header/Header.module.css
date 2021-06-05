@@ -1,27 +1,35 @@
 .container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 70px;
-    background: #383838;
-    color: #EBEBEB;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 12px 36px;
-    z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: #383838;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px 36px;
+  z-index: 3;
+}
+
+.linkButton,
+.homeLinkButton {
+  text-decoration: none;
+  padding: 10px;
+  position: relative;
+  cursor: default;
 }
 
 .linkButton {
-    color: #9B9B9B;
-    text-decoration: none;
-    padding: 10px;
-    position: relative;
-    cursor: default;
+  color: #9B9B9B;
 }
 
-.linkButton span {
+.homeLinkButton {
+  color: #EBEBEB;
+}
+
+.linkButton span,
+.homeLinkButton span {
   cursor: pointer;
 }
   

@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <div className={styles.container}>
             <div>
-                <Link to="/home" className={styles.linkButton}><span>Movies</span></Link>
+                <Link to="/home" className={styles.homeLinkButton}><span>Movies</span></Link>
             </div>
 
             <div>
