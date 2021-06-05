@@ -1,0 +1,35 @@
+.container {
+    width: 15vw;
+    height: 30vh;
+    color: #C86C3E;
+    background: #CED0D5;
+    border: 2px solid #C33E3E;
+    border-radius: 8px;
+}
+
+.title {
+    font-family: Verdana;
+    font-weight: 900;
+    font-size: 1.3rem;
+    margin-top: 7px;
+    margin-bottom: 6px;
+}
+
+.image {
+    width: 80%;
+    height: 65%;
+    position: relative;
+}
+
+.description {
+    position: relative;
+    color: #8D2B29;
+    font-size: 0.8rem;
+    text-align: start;
+    margin-top: 10px;
+    padding-left: 6px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family: Verdana;
+}
