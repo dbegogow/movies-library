@@ -1,6 +1,6 @@
 .container {
     width: 15vw;
-    height: 30vh;
+    height: 37vh;
     color: #C86C3E;
     background: #CED0D5;
     border: 2px solid #C33E3E;
@@ -25,6 +25,7 @@
     position: relative;
     color: #8D2B29;
     font-size: 0.8rem;
+    font-weight: 700;
     text-align: start;
     margin-top: 10px;
     padding-left: 6px;
