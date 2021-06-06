@@ -4,7 +4,7 @@ import Article from './Article';
 const Home = () => {
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>All movies</h2>
+            <h2 className={styles.title}>All Movies</h2>
 
             <div className={styles.articlesContainer}>
                 <Article
