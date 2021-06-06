@@ -1,10 +1,15 @@
+import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
 import Article from './Article';
 
 const Home = () => {
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>All Movies</h2>
+            <h2 className={styles.title}>
+                All Movies
+
+                <Link to="/home/add-movie" className={styles.addMovieButton}>Add<span>+</span></Link>
+            </h2>
 
             <div className={styles.articlesContainer}>
                 <Article

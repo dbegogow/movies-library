@@ -12,11 +12,14 @@ function App() {
                 <Route exact path="/">
                     <Login />
                 </Route>
-                <Route path="/home">
-                    <Home />
-                </Route>
                 <Route path="/login">
                     <LoginForm />
+                </Route>
+                <Route exact path="/home">
+                    <Home />
+                </Route>
+                <Route path="/home/add-movie">
+                    <div>Add Movie</div>
                 </Route>
             </Switch>
         </div>
