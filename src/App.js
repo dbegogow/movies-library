@@ -4,6 +4,7 @@ import Login from './components/Login';
 import Home from './components/Home';
 import LoginForm from './components/Forms/LoginForm';
 import RegisterForm from './components/Forms/RegisterForm';
+import AddMovieForm from './components/Forms/AddMovieForm';
 
 function App() {
     return (
@@ -23,7 +24,7 @@ function App() {
                     <Home />
                 </Route>
                 <Route path="/home/add-movie">
-                    <div>Add Movie</div>
+                    <AddMovieForm />
                 </Route>
             </Switch>
         </div>
