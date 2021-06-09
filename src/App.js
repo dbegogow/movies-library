@@ -2,7 +2,8 @@ import { Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Login from './components/Login';
 import Home from './components/Home';
-import LoginForm from './components/LoginForm';
+import LoginForm from './components/Forms/LoginForm';
+import RegisterForm from './components/Forms/RegisterForm';
 
 function App() {
     return (
@@ -14,6 +15,9 @@ function App() {
                 </Route>
                 <Route path="/login">
                     <LoginForm />
+                </Route>
+                <Route path="/register">
+                    <RegisterForm />
                 </Route>
                 <Route exact path="/home">
                     <Home />

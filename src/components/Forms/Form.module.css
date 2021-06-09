@@ -9,6 +9,15 @@
     max-width: 650px;
 }
 
+.input {
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 18px;
+    border-radius: 4px;
+    border: 1px solid #A4A4A4;
+    padding: 9px;
+}
+
 .button {
     padding: 8px;
     border: none;
@@ -16,6 +25,11 @@
     color: #FFFFFF;
     background: #5D6AF7;
     font-size: 1.1rem;
+}
+
+.button:hover {
+    background: #67D7F2;
+    color: #000;
 }
 
 .button:hover {
