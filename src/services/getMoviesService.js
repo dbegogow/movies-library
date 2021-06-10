@@ -1,7 +1,7 @@
-const dbUrl = 'https://movies-3dc8a-default-rtdb.firebaseio.com/movies';
+import api from './api';
 
 export const getAllMovies = async () => {
-    const res = await fetch(`${dbUrl}.json`);
+    const res = await fetch(api.paths.allMovies);
     const allMovies = await res.json();
 
     return Object.entries(allMovies)

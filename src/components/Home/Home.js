@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getAllMovies } from '../../services/moviesService';
+import { getAllMovies } from '../../services/getMoviesService';
 import styles from './Home.module.css';
 import Article from './Article';
 
