@@ -9,7 +9,7 @@ const AddMovieForm = () => {
             <input className={styles.input} type="text" id="image" name="image" placeholder="Movie Image URL" />
             <label for="description">Description</label>
             <input className={styles.input} type="text" id="description" name="description" placeholder="Movie Description" />
-            <button className={styles.button}>Login</button>
+            <button className={styles.button}>Add+</button>
         </form>
     );
 };
