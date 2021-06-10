@@ -1,8 +1,27 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
 import Article from './Article';
 
 const Home = () => {
+    const [movies, setMovies] = useState([]);
+
+    useEffect(() => {
+        fetch("https://movies-3dc8a-default-rtdb.firebaseio.com/movies.json")
+            .then(res => res.json())
+            .then(data => {
+                const moviesArr = Object.entries(data)
+                    .map(m => {
+                        return {
+                            key: m[0],
+                            ...m[1]
+                        };
+                    });
+
+                setMovies(moviesArr);
+            });
+    }, [])
+
     return (
         <div className={styles.container}>
             <h2 className={styles.title}>
@@ -22,6 +41,19 @@ const Home = () => {
                     image="https://ctycms.com/md-pike-district/images/99440320.jpg"
                     description="The film follows Kevin (Culkin), a 10-year-old boy, who once again must fend off two burglars, Harry and Marv (Pesci and Stern), after he is mistakenly separated from his family on their Christmas vacation."
                 />
+
+                {
+                    movies.map(m => {
+                        return (
+                            <Article
+                                key={m.key}
+                                title={m.title}
+                                image={m.imgUrl}
+                                description={m.description}
+                            />
+                        );
+                    })
+                }
             </div>
         </div>
     );
