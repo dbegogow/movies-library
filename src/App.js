@@ -11,21 +11,11 @@ function App() {
         <div className="App">
             <Header />
             <Switch>
-                <Route exact path="/">
-                    <Login />
-                </Route>
-                <Route path="/login">
-                    <LoginForm />
-                </Route>
-                <Route path="/register">
-                    <RegisterForm />
-                </Route>
-                <Route exact path="/home">
-                    <Home />
-                </Route>
-                <Route path="/home/add-movie">
-                    <AddMovieForm />
-                </Route>
+                <Route exact path="/" component={Login} />
+                <Route path="/login" component={LoginForm} />
+                <Route path="/register" component={RegisterForm} />
+                <Route exact path="/home" component={Home} />
+                <Route path="/home/add-movie" component={AddMovieForm} />
             </Switch>
         </div>
     );
