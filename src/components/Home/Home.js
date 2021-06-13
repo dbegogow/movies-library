@@ -25,7 +25,8 @@ const Home = () => {
                     movies.map(movie => {
                         return (
                             <Article
-                                key={movie.key}
+                                key={movie.id}
+                                id={movie.id}
                                 title={movie.title}
                                 image={movie.imgUrl}
                                 description={movie.description}

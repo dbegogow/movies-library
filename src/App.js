@@ -15,6 +15,7 @@ function App() {
                 <Route path="/login" component={LoginForm} />
                 <Route path="/register" component={RegisterForm} />
                 <Route exact path="/home" component={Home} />
+                <Route path="/home/movie/:movieId" component={Login} />
                 <Route path="/home/add-movie" component={AddMovieForm} />
             </Switch>
         </div>

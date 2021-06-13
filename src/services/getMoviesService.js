@@ -7,7 +7,7 @@ export const getAllMovies = async () => {
     return Object.entries(allMovies)
         .map(movie => {
             return {
-                key: movie[0],
+                id: movie[0],
                 ...movie[1]
             };
         });
