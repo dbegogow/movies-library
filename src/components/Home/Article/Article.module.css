@@ -1,10 +1,15 @@
 .container {
     width: 15vw;
-    height: 37vh;
+    height: 42vh;
     color: #C86C3E;
     background: #CED0D5;
     border: 2px solid #C33E3E;
     border-radius: 8px;
+}
+
+.container:hover {
+    transform: scale(1.08);
+    cursor: pointer;
 }
 
 .title {
@@ -17,7 +22,7 @@
 
 .image {
     width: 80%;
-    height: 65%;
+    height: 70%;
     position: relative;
 }
 
