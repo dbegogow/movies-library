@@ -5,6 +5,7 @@
     background: #CED0D5;
     border: 2px solid #C33E3E;
     border-radius: 8px;
+    text-decoration: none;
 }
 
 .container:hover {
@@ -24,6 +25,7 @@
     width: 80%;
     height: 70%;
     position: relative;
+    object-fit: contain;
 }
 
 .description {
