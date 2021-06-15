@@ -1,3 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
 .container {
-    margin-top: 12vh;
+    height: 80vh;
+    margin-top: 15vh;
+    margin-left: 6vw;
+    margin-right: 6vw;
+    padding: 13px;
+    background: #F8DCBC;
+    border-radius: 12px;
+    display: flex;
+}
+
+.image {
+    height: 100%;
+    width: 30vw;
+    object-fit: cover;
+    border-radius: 12px;
+}   
+
+.descriptionContainer {
+    margin: 3vh 3vw;
+    border-radius: 12px;
+    background: white;
+    border: 2px solid #000;
+}
+
+.title {
+    text-align: center;
+    color: #C33E3E;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.3rem;
+}
+
+.description {
+    margin: 1vh 2vw;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.3rem;
 }
