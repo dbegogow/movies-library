@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { getMovieById } from '../../services/getMoviesService';
 import styles from './Movie.module.css';
+import Loader from '../Loader';
 
 const Movie = (props) => {
-    const [movie, setMovie] = useState({});
+    const [movie, setMovie] = useState(null);
 
     const id = props.match.params.movieId;
 
@@ -11,6 +12,10 @@ const Movie = (props) => {
         getMovieById(id)
             .then(res => setMovie(res));
     }, [id]);
+
+    if (movie === null) {
+        return <Loader />;
+    }
 
     return (
         <div className={styles.container}>

@@ -3,14 +3,19 @@ import { Link } from 'react-router-dom';
 import { getAllMovies } from '../../services/getMoviesService';
 import styles from './Home.module.css';
 import Article from './Article';
+import Loader from '../Loader';
 
 const Home = () => {
-    const [movies, setMovies] = useState([]);
+    const [movies, setMovies] = useState(null);
 
     useEffect(() => {
         getAllMovies()
             .then(res => setMovies(res));
     }, [])
+
+    if (movies === null) {
+        return <Loader />;
+    }
 
     return (
         <div className={styles.container}>
