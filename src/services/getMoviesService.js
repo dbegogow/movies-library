@@ -12,3 +12,8 @@ export const getAllMovies = async () => {
             };
         });
 };
+
+export const getMovieById = async (id) => {
+    const res = await fetch(`${api.paths.movieById}${id}.json`);
+    return await res.json();
+};
