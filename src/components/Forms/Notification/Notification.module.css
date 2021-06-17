@@ -1,0 +1,23 @@
+.container {
+    color: #FFF;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 11vh;
+    width: 60vw;
+    height: 5vh;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.successful {
+    background: #A3E765;
+    border: 2px solid #71A63B;
+}
+
+.error {
+    background: #EE2D2D;
+    border: 2px solid #902C2C;
+}
