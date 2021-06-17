@@ -16,7 +16,9 @@ const AddMovieForm = ({ history }) => {
         const imgUrl = target.imgUrl.value;
         const description = target.description.value;
 
-        if (!title || !imgUrl || !description) {
+        if (title.length < 3 ||
+            !imgUrl ||
+            description.length < 10) {
             presentErrorNotification(target);
             return;
         }
