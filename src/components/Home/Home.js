@@ -21,9 +21,9 @@ const Home = () => {
         <div className={styles.container}>
             <h2 className={styles.title}>
                 All Movies
-
-                <Link to="/home/add-movie" className={styles.addMovieButton}>Add<span>+</span></Link>
             </h2>
+
+            <Link to="/home/add-movie" className={styles.addMovieButton}>Add<span>+</span></Link>
 
             <div className={styles.articlesContainer}>
                 {

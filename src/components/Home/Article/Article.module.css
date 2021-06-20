@@ -1,11 +1,45 @@
 .container {
     width: 15vw;
-    height: 42vh;
+    height: 40vh;
     color: #C86C3E;
     background: #CED0D5;
     border: 2px solid #C33E3E;
     border-radius: 8px;
     text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        width: 18vw;
+        height: 23vh;
+    }
+}
+
+@media (max-width: 1000px) {
+    .container {
+        width: 22vw;
+        height: 37vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 28vw;
+    }
+}
+
+@media (max-width: 450px) {
+    .container {
+        width: 50vw;
+        height: 40vh;
+    }
+}
+
+@media (max-width: 350px) {
+    .container {
+        width: 55vw;
+        height: 58vh;
+    }
 }
 
 .container:hover {

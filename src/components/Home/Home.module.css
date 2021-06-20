@@ -9,19 +9,19 @@
     margin: 0 10% 12% 10%;
     padding: 4vh;
     border-radius: 14px;
+    display: flex;
+    flex-direction: column;
 }
 
 .title {
     font-size: 2rem;
     font-family: 'Sigmar One', cursive;
-    position: relative;
-    bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .addMovieButton {
-    position: absolute;
-    top: 12px;
-    right: 17vw;
+    margin: 15px auto;
+    width: fit-content;
     padding: 6px;
     border: 2px solid #42922A;
     border-radius: 10px;
@@ -45,11 +45,24 @@
 }
 
 .articlesContainer {
+    margin-top: 20px;
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 20px;
     row-gap: 50px;
+}
+
+@media (max-width: 1200px) {
+    .articlesContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1000px) {
+    .articlesContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
