@@ -26,6 +26,7 @@ const Movie = (props) => {
             <div className={styles.descriptionContainer}>
                 <h1 className={styles.title}>{movie.title}</h1>
                 <div className={styles.description}>{movie.description}</div>
+                <div className={styles.creator}><span>Added by:</span> {movie.creator}</div>
             </div>
         </div>
     );

@@ -2,10 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 .container {
-    height: 80vh;
-    margin-top: 15vh;
-    margin-left: 6vw;
-    margin-right: 6vw;
+    position: relative;
+    top: 16vh;
+    margin: 0 10% 12% 10%;
     padding: 13px;
     background: #F8DCBC;
     border-radius: 12px;
@@ -19,7 +18,7 @@
     border-radius: 12px;
 }   
 
-@media (max-width: 450px) {
+@media (max-width: 700px) {
     .container {
         flex-direction: column;
         align-items: center;
@@ -49,4 +48,12 @@
     margin: 1vh 2vw;
     font-family: 'Patrick Hand', cursive;
     font-size: 1.3rem;
+}
+
+.creator {
+    margin: 2.5vh 2vw;
+}
+
+.creator span {
+    font-weight: bold;
 }
