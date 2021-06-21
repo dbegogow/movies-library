@@ -35,6 +35,7 @@
     border-radius: 12px;
     background: white;
     border: 2px solid #000;
+    padding-bottom: 15px;
 }
 
 .title {
@@ -44,16 +45,44 @@
     font-size: 2.3rem;
 }
 
+.aboutMovie {
+    margin-left: 2vw;
+}
+
 .description {
-    margin: 1vh 2vw;
+    margin-top: 1vh;
     font-family: 'Patrick Hand', cursive;
     font-size: 1.3rem;
 }
 
 .creator {
-    margin: 2.5vh 2vw;
+    margin-top: 2vh;
 }
 
 .creator span {
     font-weight: bold;
+}
+
+.likeButton {
+    margin-top: 3vh;
+    font-size: 1rem;
+    padding: 7px;
+    border: 2px solid #101AA7;
+    border-radius: 7px;
+    background: #1778E2 ;
+    color: #FFF;
+}
+
+.likeButton:hover {
+    cursor: pointer;
+}
+
+.editButton {
+    margin-left: 12px;
+    font-size: 1rem;
+    padding: 7px;
+    border-radius: 7px;
+    border: 2px solid #865C0E;
+    background: #F4A91E;
+    color: #FFF;
 }

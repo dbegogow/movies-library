@@ -25,8 +25,12 @@ const Movie = (props) => {
             />
             <div className={styles.descriptionContainer}>
                 <h1 className={styles.title}>{movie.title}</h1>
-                <div className={styles.description}>{movie.description}</div>
-                <div className={styles.creator}><span>Added by:</span> {movie.creator}</div>
+                <div className={styles.aboutMovie}>
+                    <div className={styles.description}>{movie.description}</div>
+                    <div className={styles.creator}><span>Added by:</span> {movie.creator}</div>
+                    <button className={styles.likeButton}>Like</button>
+                    <button className={styles.editButton}>Edit</button>
+                </div>
             </div>
         </div>
     );
