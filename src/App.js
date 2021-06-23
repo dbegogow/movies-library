@@ -5,7 +5,7 @@ import Login from './components/Login';
 import Header from './components/Header';
 import LoginForm from './components/Forms/LoginForm';
 import RegisterForm from './components/Forms/RegisterForm';
-import AddMovieForm from './components/Forms/AddMovieForm';
+import MovieForm from './components/Forms/MovieForm';
 
 function App() {
     return (
@@ -17,7 +17,7 @@ function App() {
                 <Route path="/register" component={RegisterForm} />
                 <Route exact path="/home" component={Home} />
                 <Route path="/home/movie/:movieId" component={Movie} />
-                <Route path="/home/add-movie" component={AddMovieForm} />
+                <Route path="/home/add-movie" component={MovieForm} />
             </Switch>
         </div>
     );

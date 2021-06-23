@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { getMovieById } from '../../services/getMoviesService';
 import styles from './Movie.module.css';
 import Loader from '../Loader';
@@ -29,7 +30,7 @@ const Movie = (props) => {
                     <div className={styles.description}>{movie.description}</div>
                     <div className={styles.creator}><span>Added by:</span> {movie.creator}</div>
                     <button className={styles.likeButton}>Like</button>
-                    <button className={styles.editButton}>Edit</button>
+                    <Link to="/home/add-movie" className={styles.editButton}>Edit</Link>
                 </div>
             </div>
         </div>
