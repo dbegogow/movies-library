@@ -1,9 +1,13 @@
 import { useState } from 'react';
-import { addMovie } from '../../../services/postMoviesService';
+import { useHistory, useParams } from "react-router-dom";
 import styles from '../Form.module.css';
 import Notification from '../Notification';
 
-const AddMovieForm = ({ history }) => {
+const MovieForm = (props) => {
+    const { serviceFunc } = props;
+    const history = useHistory();
+    const { movieId } = useParams();
+
     const [successNotification, setSuccessNotification] = useState(false);
     const [errorNotification, setErrorNotification] = useState(false);
 
@@ -23,7 +27,7 @@ const AddMovieForm = ({ history }) => {
             return;
         }
 
-        addMovie(title, imgUrl, description)
+        serviceFunc(title, imgUrl, description, movieId)
             .then(() => {
                 presentSuccessfulNotification();
             })
@@ -79,4 +83,4 @@ const AddMovieForm = ({ history }) => {
     );
 };
 
-export default AddMovieForm;
+export default MovieForm;

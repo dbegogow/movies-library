@@ -6,7 +6,8 @@ const api = {
         movieById: `${dbUrl}/`
     },
     methods: {
-        post: 'POST'
+        post: 'POST',
+        patch: 'PATCH'
     }
 }
 

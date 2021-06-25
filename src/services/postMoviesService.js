@@ -17,3 +17,8 @@ export const addMovie = async (title, imgUrl, description) => {
     return await fetch(api.paths.allMovies,
         { method: api.methods.post, body: JSON.stringify(newMovie) });
 };
+
+export const editMovie = async (title, imgUrl, description, id) => {
+    return await fetch(`${api.paths.movieById}${id}.json`,
+        { method: api.methods.patch, body: JSON.stringify({ title, imgUrl, description }) });
+};

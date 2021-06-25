@@ -1,4 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
+import { addMovie, editMovie } from './services/postMoviesService';
 import Home from './components/Home';
 import Movie from './components/Movie';
 import Login from './components/Login';
@@ -17,7 +18,8 @@ function App() {
                 <Route path="/register" component={RegisterForm} />
                 <Route exact path="/home" component={Home} />
                 <Route path="/home/movie/:movieId" component={Movie} />
-                <Route path="/home/add-movie" component={MovieForm} />
+                <Route path="/home/add-movie" render={() => <MovieForm serviceFunc={addMovie} />} />
+                <Route path="/home/edit-movie/:movieId" render={() => <MovieForm serviceFunc={editMovie} />} />
             </Switch>
         </div>
     );

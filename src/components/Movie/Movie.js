@@ -30,7 +30,7 @@ const Movie = (props) => {
                     <div className={styles.description}>{movie.description}</div>
                     <div className={styles.creator}><span>Added by:</span> {movie.creator}</div>
                     <button className={styles.likeButton}>Like</button>
-                    <Link to="/home/add-movie" className={styles.editButton}>Edit</Link>
+                    <Link to={`/home/edit-movie/${id}`} className={styles.editButton}>Edit</Link>
                 </div>
             </div>
         </div>
