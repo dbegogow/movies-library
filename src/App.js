@@ -1,4 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
+import './utils/firebase';
 import { addMovie, editMovie } from './services/postMoviesService';
 import Home from './components/Home';
 import Movie from './components/Movie';
