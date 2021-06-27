@@ -1,15 +1,10 @@
 import styles from './Notification.module.css';
 
 const Notification = (props) => {
-    const { type } = props;
-
-    const messages = {
-        successful: 'Created successfully!',
-        error: 'Invalid inputs!'
-    };
+    const { children, type } = props;
 
     return (
-        <div className={`${styles.container} ${styles[type]}`}>{messages[type]}</div>
+        <div className={`${styles.container} ${styles[type]}`}>{children}</div>
     );
 };
 

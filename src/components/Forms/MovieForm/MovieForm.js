@@ -1,15 +1,16 @@
 import { useState } from 'react';
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import styles from '../Form.module.css';
 import Notification from '../Notification';
+import usePresentFormSuccessNotification from '../../../hooks/usePresentFromSuccessNotification';
+import usePresentFormErrorNotification from '../../../hooks/usePresentFormErrorNotification';
 
 const MovieForm = (props) => {
     const { serviceFunc } = props;
-    const history = useHistory();
     const { movieId } = useParams();
 
-    const [successNotification, setSuccessNotification] = useState(false);
-    const [errorNotification, setErrorNotification] = useState(false);
+    const [successNotification, setSuccessNotification] = usePresentFormSuccessNotification();
+    const [errorNotification, setErrorNotification] = usePresentFormErrorNotification(false);
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -23,50 +24,47 @@ const MovieForm = (props) => {
         if (title.length < 3 ||
             !imgUrl ||
             description.length < 10) {
-            presentErrorNotification(target);
+            cleanFormInputs(target);
+            setErrorNotification(true);
+
             return;
         }
 
         serviceFunc(title, imgUrl, description, movieId)
             .then(() => {
-                presentSuccessfulNotification();
+                setSuccessNotification(true);
             })
             .catch(() => {
-                presentErrorNotification(target);
+                cleanFormInputs(target);
+                setErrorNotification(true);
             });
     };
 
-    const presentSuccessfulNotification = () => {
-        setSuccessNotification(true);
-
-        setTimeout(() => {
-            history.push('/home');
-        }, 800);
+    const cleanFormInputs = (target) => {
+        target.title.value = '';
+        target.imgUrl.value = '';
+        target.description.value = '';
     };
-
-    const presentErrorNotification = ({ title, imgUrl, description }) => {
-        setErrorNotification(true);
-
-        setTimeout(() => {
-            title.value = '';
-            imgUrl.value = '';
-            description.value = '';
-
-            setErrorNotification(false);
-        }, 800);
-    }
 
     return (
         <>
             {
                 successNotification
-                    ? <Notification type="successful" />
+                    ? (
+                        <Notification type="success">
+                            Added Successfuly!
+                        </Notification>
+                    )
                     : null
             }
 
             {
                 errorNotification
-                    ? <Notification type="error" />
+                    ? (
+                        <Notification type="error">
+                            Invalid input data!
+                        </Notification>
+                    )
                     : null
             }
 
