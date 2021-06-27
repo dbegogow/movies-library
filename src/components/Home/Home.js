@@ -27,7 +27,7 @@ const Home = () => {
 
             <div className={styles.articlesContainer}>
                 {
-                    movies.map(movie => {
+                    movies?.map(movie => {
                         return (
                             <Article
                                 key={movie.id}

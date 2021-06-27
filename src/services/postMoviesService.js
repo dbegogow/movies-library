@@ -1,4 +1,4 @@
-import api from './api';
+import db from '../utils/firebase';
 
 export const addMovie = async (title, imgUrl, description) => {
     const creator = 'dzhulio@abv.bg';
@@ -12,13 +12,15 @@ export const addMovie = async (title, imgUrl, description) => {
         likes,
     }
 
-    console.log(newMovie);
-
-    return await fetch(api.paths.allMovies,
-        { method: api.methods.post, body: JSON.stringify(newMovie) });
+    return db.collection("movies").add(newMovie);
 };
 
 export const editMovie = async (title, imgUrl, description, id) => {
-    return await fetch(`${api.paths.movieById}${id}.json`,
-        { method: api.methods.patch, body: JSON.stringify({ title, imgUrl, description }) });
+    return db.collection("movies")
+        .doc(id)
+        .set({
+            title,
+            imgUrl,
+            description
+        });
 };

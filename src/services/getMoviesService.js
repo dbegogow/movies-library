@@ -1,19 +1,31 @@
-import api from './api';
+import db from '../utils/firebase';
 
 export const getAllMovies = async () => {
-    const res = await fetch(api.paths.allMovies);
-    const allMovies = await res.json();
+    return db.collection("movies")
+        .get()
+        .then((querySnapshot) => {
+            const data = [];
 
-    return Object.entries(allMovies)
-        .map(movie => {
-            return {
-                id: movie[0],
-                ...movie[1]
-            };
+            querySnapshot.forEach((doc) => {
+                data.push({
+                    id: doc.id,
+                    ...doc.data()
+                })
+            });
+
+            return data;
         });
+
 };
 
 export const getMovieById = async (id) => {
-    const res = await fetch(`${api.paths.movieById}${id}.json`);
-    return await res.json();
+    return db.collection('movies')
+        .doc(id)
+        .get()
+        .then(doc => {
+            return {
+                id: id,
+                ...doc.data()
+            }
+        });
 };
