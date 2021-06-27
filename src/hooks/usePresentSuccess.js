@@ -1,12 +1,14 @@
 import { useState } from "react";
+import { useHistory } from "react-router";
 
-const usePresentFormErrorNotification = () => {
+const usePresentSuccess = () => {
     const [present, setPresent] = useState(false);
+    const history = useHistory();
 
     if (present) {
         setTimeout(() => {
-            setPresent(false);
-        }, 1000);
+            history.push('/home');
+        }, 800);
     }
 
     return [
@@ -15,4 +17,4 @@ const usePresentFormErrorNotification = () => {
     ]
 };
 
-export default usePresentFormErrorNotification;
+export default usePresentSuccess;

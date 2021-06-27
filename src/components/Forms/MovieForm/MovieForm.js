@@ -1,15 +1,15 @@
 import { useParams } from "react-router-dom";
+import usePresentSuccess from '../../../hooks/usePresentSuccess';
+import usePresentError from '../../../hooks/usePresentError';
 import styles from '../Form.module.css';
 import Notification from '../Notification';
-import usePresentFormSuccessNotification from '../../../hooks/usePresentFromSuccessNotification';
-import usePresentFormErrorNotification from '../../../hooks/usePresentFormErrorNotification';
 
 const MovieForm = (props) => {
     const { serviceFunc } = props;
     const { movieId } = useParams();
 
-    const [successNotification, setSuccessNotification] = usePresentFormSuccessNotification();
-    const [errorNotification, setErrorNotification] = usePresentFormErrorNotification(false);
+    const [presentSuccess, setPresentSuccess] = usePresentSuccess();
+    const [presentError, setPresentError] = usePresentError();
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -24,18 +24,18 @@ const MovieForm = (props) => {
             !imgUrl ||
             description.length < 10) {
             cleanFormInputs(target);
-            setErrorNotification(true);
+            setPresentError(true);
 
             return;
         }
 
         serviceFunc(title, imgUrl, description, movieId)
             .then(() => {
-                setSuccessNotification(true);
+                setPresentSuccess(true);
             })
             .catch(() => {
                 cleanFormInputs(target);
-                setErrorNotification(true);
+                setPresentError(true);
             });
     };
 
@@ -48,7 +48,7 @@ const MovieForm = (props) => {
     return (
         <>
             {
-                successNotification
+                presentSuccess
                     ? (
                         <Notification type="success">
                             Added Successfuly!
@@ -58,7 +58,7 @@ const MovieForm = (props) => {
             }
 
             {
-                errorNotification
+                presentError
                     ? (
                         <Notification type="error">
                             Invalid input data!

@@ -8,7 +8,7 @@ const RegisterForm = () => {
             <label htmlFor="password">Password</label>
             <input className={styles.input} type="password" id="password" name="password" placeholder="Password" />
             <label htmlFor="password">Repeat Password</label>
-            <input className={styles.input} type="password" id="password" name="password" placeholder="Repeat Password" />
+            <input className={styles.input} type="password" id="repeat-password" name="repeat-password" placeholder="Repeat Password" />
             <button className={styles.button}>Login</button>
         </form>
     );
