@@ -1,10 +1,11 @@
-import { auth } from '../../../utils/firebase';
+import { useAuth } from '../../../contexts/AuthContext';
 import usePresentSuccess from '../../../hooks/usePresentSuccess';
 import usePresentError from '../../../hooks/usePresentError';
 import styles from '../Form.module.css';
 import Notification from '../Notification';
 
 const LoginForm = () => {
+    const { login } = useAuth();
     const [presentSuccess, setPresentSuccess] = usePresentSuccess();
     const [presentError, setPresentError] = usePresentError();
 
@@ -16,7 +17,7 @@ const LoginForm = () => {
         const email = target.email.value;
         const password = target.password.value;
 
-        auth.signInWithEmailAndPassword(email, password)
+        login(email, password)
             .then(() => {
                 setPresentSuccess(true);
             })
