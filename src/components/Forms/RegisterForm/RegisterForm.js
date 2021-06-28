@@ -1,10 +1,11 @@
-import { auth } from '../../../utils/firebase';
+import { useAuth } from '../../../contexts/AuthContext';
 import usePresentSuccess from '../../../hooks/usePresentSuccess';
 import usePresentError from '../../../hooks/usePresentError';
 import styles from '../Form.module.css';
 import Notification from '../Notification';
 
 const RegisterForm = () => {
+    const { singup, currentUser } = useAuth();
     const [presentSuccess, setPresentSuccess] = usePresentSuccess();
     const [presentError, setPresentError] = usePresentError();
 
@@ -23,15 +24,14 @@ const RegisterForm = () => {
             setPresentError(true);
         }
 
-        auth.createUserWithEmailAndPassword(email, password)
+        singup(email, password)
             .then(() => {
                 setPresentSuccess(true);
             })
             .catch(() => {
-                cleanFormInputs(target);
-                setPresentError(true);
+                cleanFormInputs(true);
+                setPresentSuccess(true);
             });
-
     };
 
     const cleanFormInputs = (target) => {

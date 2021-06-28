@@ -21,7 +21,7 @@ const AuthProvider = ({ children }) => {
 
         return unsubscribe;
     }, []);
- 
+
     const value = {
         currentUser,
         singup

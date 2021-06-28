@@ -52,7 +52,7 @@ const LoginForm = () => {
 
             <form className={styles.container} onSubmit={onLoginSubmitHandler}>
                 <label htmlFor="email">Email</label>
-                <input className={styles.input} type="email" id="email" name="email" placeholder="Email" />
+                <input className={styles.input} type="text" id="email" name="email" placeholder="Email" />
                 <label htmlFor="password">Password</label>
                 <input className={styles.input} type="password" id="password" name="password" placeholder="Password" />
                 <button className={styles.button}>Login</button>
