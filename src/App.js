@@ -1,4 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
+import PrivateRoute from './components/PrivateRoute';
 import { AuthProvider } from './contexts/AuthContext';
 import { addMovie, editMovie } from './services/postMoviesService';
 import Home from './components/Home';
@@ -18,10 +19,10 @@ function App() {
                     <Route exact path="/" component={Login} />
                     <Route path="/login" component={LoginForm} />
                     <Route path="/register" component={RegisterForm} />
-                    <Route exact path="/home" component={Home} />
-                    <Route path="/home/movie/:movieId" component={Movie} />
-                    <Route path="/home/add-movie" render={() => <MovieForm serviceFunc={addMovie} />} />
-                    <Route path="/home/edit-movie/:movieId" render={() => <MovieForm serviceFunc={editMovie} />} />
+                    <PrivateRoute exact path="/home" component={Home} />
+                    <PrivateRoute path="/home/movie/:movieId" component={Movie} />
+                    <PrivateRoute path="/home/add-movie" render={() => <MovieForm serviceFunc={addMovie} />} />
+                    <PrivateRoute path="/home/edit-movie/:movieId" render={() => <MovieForm serviceFunc={editMovie} />} />
                 </Switch>
             </AuthProvider>
         </div>

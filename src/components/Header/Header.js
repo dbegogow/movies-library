@@ -1,15 +1,20 @@
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router';
 import { useAuth } from '../../contexts/AuthContext';
 import usePresentError from '../../hooks/usePresentError';
 import styles from './Header.module.css';
 import Notification from '../Forms/Notification';
 
 const Header = () => {
+    const history = useHistory();
     const { logout, currentUser } = useAuth();
     const [presentError, setPresentError] = usePresentError();
 
     const onLogoutClickHandler = () => {
         logout()
+            .then(() => {
+                history.push('/login');
+            })
             .catch(() => {
                 setPresentError(true);
             });
@@ -19,13 +24,13 @@ const Header = () => {
         <>
             <div className={styles.container}>
                 <div>
-                    <Link to="/home" className={styles.homeLinkButton}><span>Movies</span></Link>
+                    <Link to="/" className={styles.homeLinkButton}><span>Movies</span></Link>
                 </div>
 
                 <div>
                     {
                         currentUser
-                            ? <Link to="/" onClick={onLogoutClickHandler} className={styles.linkButton}><span>Logout</span></Link>
+                            ? <Link onClick={onLogoutClickHandler} className={styles.linkButton}><span>Logout</span></Link>
                             : (
                                 <>
                                     <Link to="/login" className={styles.linkButton}><span>Login</span></Link>
