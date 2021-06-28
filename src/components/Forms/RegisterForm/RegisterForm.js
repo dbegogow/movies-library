@@ -5,7 +5,7 @@ import styles from '../Form.module.css';
 import Notification from '../Notification';
 
 const RegisterForm = () => {
-    const { singup, currentUser } = useAuth();
+    const { singup } = useAuth();
     const [presentSuccess, setPresentSuccess] = usePresentSuccess();
     const [presentError, setPresentError] = usePresentError();
 
@@ -22,6 +22,8 @@ const RegisterForm = () => {
             password !== repeatPassword) {
             cleanFormInputs(target);
             setPresentError(true);
+
+            return;
         }
 
         singup(email, password)
@@ -29,12 +31,13 @@ const RegisterForm = () => {
                 setPresentSuccess(true);
             })
             .catch(() => {
-                cleanFormInputs(true);
+                cleanFormInputs(target);
                 setPresentSuccess(true);
             });
     };
 
     const cleanFormInputs = (target) => {
+        console.log(target);
         target.email.value = '';
         target.password.value = '';
         target.repeatPassword.value = '';
