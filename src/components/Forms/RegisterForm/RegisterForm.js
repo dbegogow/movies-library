@@ -5,7 +5,7 @@ import styles from '../Form.module.css';
 import Notification from '../Notification';
 
 const RegisterForm = () => {
-    const { singup } = useAuth();
+    const { signup } = useAuth();
     const [presentSuccess, setPresentSuccess] = usePresentSuccess();
     const [presentError, setPresentError] = usePresentError();
 
@@ -26,7 +26,7 @@ const RegisterForm = () => {
             return;
         }
 
-        singup(email, password)
+        signup(email, password)
             .then(() => {
                 setPresentSuccess(true);
             })
@@ -45,25 +45,8 @@ const RegisterForm = () => {
 
     return (
         <>
-            {
-                presentSuccess
-                    ? (
-                        <Notification type="success">
-                            Added Successfuly!
-                        </Notification>
-                    )
-                    : null
-            }
-
-            {
-                presentError
-                    ? (
-                        <Notification type="error">
-                            Invalid input data!
-                        </Notification>
-                    )
-                    : null
-            }
+            {presentSuccess && <Notification type="success">Register Successfuly!</Notification>}
+            {presentError && <Notification type="error">Invalid input data!</Notification>}
 
             <form className={styles.container} onSubmit={onRegisterSubmitHandler}>
                 <label htmlFor="email">Email</label>

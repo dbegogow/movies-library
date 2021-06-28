@@ -31,25 +31,8 @@ const LoginForm = () => {
 
     return (
         <>
-            {
-                presentSuccess
-                    ? (
-                        <Notification type="success">
-                            Added Successfuly!
-                        </Notification>
-                    )
-                    : null
-            }
-
-            {
-                presentError
-                    ? (
-                        <Notification type="error">
-                            Invalid input data!
-                        </Notification>
-                    )
-                    : null
-            }
+            {presentSuccess && <Notification type="success">Login Successfuly!</Notification>}
+            {presentError && <Notification type="error">Invalid input data!</Notification>}
 
             <form className={styles.container} onSubmit={onLoginSubmitHandler}>
                 <label htmlFor="email">Email</label>

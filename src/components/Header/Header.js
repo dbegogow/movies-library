@@ -1,18 +1,45 @@
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext';
+import usePresentError from '../../hooks/usePresentError';
 import styles from './Header.module.css';
+import Notification from '../Forms/Notification';
 
 const Header = () => {
-    return (
-        <div className={styles.container}>
-            <div>
-                <Link to="/home" className={styles.homeLinkButton}><span>Movies</span></Link>
-            </div>
+    const { logout, currentUser } = useAuth();
+    const [presentError, setPresentError] = usePresentError();
 
-            <div>
-                <Link to="/login" className={styles.linkButton}><span>Login</span></Link>
-                <Link to="/register" className={styles.linkButton}><span>Register</span></Link>
-            </div>
-        </div>
+    const onLogoutClickHandler = () => {
+        logout()
+            .catch(() => {
+                setPresentError(true);
+            });
+    };
+
+    return (
+        <>
+            <div className={styles.container}>
+                <div>
+                    <Link to="/home" className={styles.homeLinkButton}><span>Movies</span></Link>
+                </div>
+
+                <div>
+                    {
+                        currentUser
+                            ? <Link to="/" onClick={onLogoutClickHandler} className={styles.linkButton}><span>Logout</span></Link>
+                            : (
+                                <>
+                                    <Link to="/login" className={styles.linkButton}><span>Login</span></Link>
+                                    <Link to="/register" className={styles.linkButton}><span>Register</span></Link>
+                                </>
+                            )
+                    }
+                </div>
+            </div >
+
+            {
+                presentError && <Notification type='error'>Error appear when logout!</Notification>
+            }
+        </>
     );
 };
 
