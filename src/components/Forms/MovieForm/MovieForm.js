@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom";
+import { useAuth } from "../../../contexts/AuthContext";
 import usePresentSuccess from '../../../hooks/usePresentSuccess';
 import usePresentError from '../../../hooks/usePresentError';
 import styles from '../Form.module.css';
 import Notification from '../Notification';
 
 const MovieForm = (props) => {
+    const { currentUser } = useAuth();
     const { serviceFunc } = props;
     const { movieId } = useParams();
 
@@ -29,7 +31,7 @@ const MovieForm = (props) => {
             return;
         }
 
-        serviceFunc(title, imgUrl, description, movieId)
+        serviceFunc(title, imgUrl, description, currentUser.email, movieId)
             .then(() => {
                 setPresentSuccess(true);
             })

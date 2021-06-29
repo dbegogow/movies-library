@@ -1,7 +1,6 @@
 import db from '../utils/firebase';
 
-export const addMovie = async (title, imgUrl, description) => {
-    const creator = 'dzhulio@abv.bg';
+export const addMovie = async (title, imgUrl, description, creator) => {
     const likes = 0;
 
     const newMovie = {
@@ -15,7 +14,7 @@ export const addMovie = async (title, imgUrl, description) => {
     return db.collection("movies").add(newMovie);
 };
 
-export const editMovie = async (title, imgUrl, description, id) => {
+export const editMovie = async (title, imgUrl, description, _, id) => {
     return db.collection("movies")
         .doc(id)
         .set({
