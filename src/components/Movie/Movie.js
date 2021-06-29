@@ -22,10 +22,6 @@ const Movie = (props) => {
             .then(res => setMovie(res));
     }, [id]);
 
-    const onLikeClikHandler = () => {
-
-    };
-
     const onRemoveClickHandler = () => {
         removeMovie(id)
             .then(() => {
@@ -63,7 +59,7 @@ const Movie = (props) => {
                                         <button className={styles.removeButton} onClick={onRemoveClickHandler}>Remove</button>
                                     </div>
                                 )
-                                : <button className={styles.likeButton} onClick={onLikeClikHandler}>Like</button>
+                                : null
                         }
                     </div>
                 </div>

@@ -6,6 +6,7 @@
     border: 2px solid #C33E3E;
     border-radius: 8px;
     text-decoration: none;
+    overflow: hidden;
 }
 
 @media (max-width: 1200px) {
@@ -63,7 +64,6 @@
 }
 
 .description {
-    position: relative;
     color: #8D2B29;
     font-size: 0.8rem;
     font-weight: 700;
