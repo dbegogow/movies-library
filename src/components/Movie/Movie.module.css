@@ -51,6 +51,7 @@
 
 .description {
     margin-top: 1vh;
+    margin-right: 8px;
     font-family: 'Patrick Hand', cursive;
     font-size: 1.3rem;
 }
@@ -77,6 +78,10 @@
     cursor: pointer;
 }
 
+.creatorButtonsContainer {
+    margin-top: 3vh;
+}
+
 .editButton {
     margin-left: 12px;
     font-size: 1rem;
@@ -86,4 +91,18 @@
     background: #F4A91E;
     color: #FFF;
     text-decoration: none;
+}
+
+.removeButton {
+    margin-left: 12px;
+    font-size: 1rem;
+    padding: 7px;
+    border-radius: 7px;
+    border: 2px solid #A21212;
+    background: #F90E0E;
+    color: #FFF;
+}
+
+.removeButton:hover {
+    cursor: pointer;
 }

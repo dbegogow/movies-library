@@ -23,3 +23,9 @@ export const editMovie = async (title, imgUrl, description, _, id) => {
             description
         });
 };
+
+export const removeMovie = async (id) => {
+    return db.collection("movies")
+        .doc(id)
+        .delete();
+};
