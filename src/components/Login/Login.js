@@ -1,17 +1,18 @@
-import styles from './Login.module.css';
-import { useHistory } from 'react-router';
+import { Redirect } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import styles from './Login.module.css';
 
 const Login = () => {
-    const history = useHistory();
     const { currentUser } = useAuth();
 
-    if (currentUser) {
-        history.push('/home');
-    }
-
     return (
-        <section className={styles.container} />
+        <>
+            {
+                currentUser
+                    ? <Redirect to="/home" />
+                    : <section className={styles.container} />
+            }
+        </>
     );
 };
 

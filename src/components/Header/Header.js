@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import usePresentError from '../../hooks/usePresentError';
 import styles from './Header.module.css';
@@ -17,7 +17,7 @@ const Header = () => {
             })
             .catch(() => {
                 setPresentError(true);
-            });
+            })
     };
 
     return (
@@ -30,7 +30,7 @@ const Header = () => {
                 <div>
                     {
                         currentUser
-                            ? <Link onClick={onLogoutClickHandler} className={styles.linkButton}><span>Logout</span></Link>
+                            ? <div onClick={onLogoutClickHandler} className={styles.linkButton}><span>Logout</span></div>
                             : (
                                 <>
                                     <Link to="/login" className={styles.linkButton}><span>Login</span></Link>

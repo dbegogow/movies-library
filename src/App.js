@@ -21,8 +21,8 @@ function App() {
                     <Route path="/register" component={RegisterForm} />
                     <PrivateRoute exact path="/home" component={Home} />
                     <PrivateRoute path="/home/movie/:movieId" component={Movie} />
-                    <PrivateRoute path="/home/add-movie" render={() => <MovieForm serviceFunc={addMovie} />} />
-                    <PrivateRoute path="/home/edit-movie/:movieId" render={() => <MovieForm serviceFunc={editMovie} />} />
+                    <PrivateRoute path="/home/add-movie" component={() => <MovieForm serviceFunc={addMovie} />} />
+                    <PrivateRoute path="/home/edit-movie/:movieId" component={() => <MovieForm serviceFunc={editMovie} />} />
                 </Switch>
             </AuthProvider>
         </div>
